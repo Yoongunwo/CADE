@@ -1,10 +1,13 @@
+# For Me
+
 # CADE: Contrastive Autoencoder for Drifting detection and Explanation
 
 The repository contains the code for detecting and explaining a specific type of concept drift (i.e., previously unseen families) in security applications like malware attribution and network intrusion classification.
 
-Further details can be found in the paper "*CADE: Detecting and Explaining Concept Drift Samples for Security Applications*" by Limin Yang, Wenbo Guo, Qingying Hao, Arridhana Ciptadi, Ali Ahmadzadeh, Xinyu Xing, Gang Wang (USENIX Security 2021). We also include supplemental materials in the repo (`USENIX_21_drifting_Supplementary_Materials.pdf`) due to page limit.   Check out http://liminyang.web.illinois.edu for up-to-date information on the project.
+Further details can be found in the paper "_CADE: Detecting and Explaining Concept Drift Samples for Security Applications_" by Limin Yang, Wenbo Guo, Qingying Hao, Arridhana Ciptadi, Ali Ahmadzadeh, Xinyu Xing, Gang Wang (USENIX Security 2021). We also include supplemental materials in the repo (`USENIX_21_drifting_Supplementary_Materials.pdf`) due to page limit. Check out http://liminyang.web.illinois.edu for up-to-date information on the project.
 
 If you end up building on this research or code as part of a project or publication, please include a reference to the USENIX Security paper:
+
 ```
 @inproceedings{yang2021cade,
     title = {CADE: Detecting and Explaining Concept Drift Samples for Security Applications},
@@ -18,14 +21,14 @@ If you end up building on this research or code as part of a project or publicat
 
 Before getting started we recommend setting up a Python 3.6.5 or 3.6.8 virtual environment (other Python 3.6 or above versions might also work but didn't test).
 
-* If you are using CPU-based tensorflow, install all required packages:
+- If you are using CPU-based tensorflow, install all required packages:
 
   ```bash
   pip install -r requirements-tensorflow-cpu.txt
   python setup.py install
   ```
 
-* If you are using GPU-based tensorflow, please try the following steps to setup:
+- If you are using GPU-based tensorflow, please try the following steps to setup:
 
   ```bash
   module load cuda-toolkit/9.0  # other versions might also work but didn't test
@@ -43,17 +46,9 @@ Before getting started we recommend setting up a Python 3.6.5 or 3.6.8 virtual e
   python setup.py install
   ```
 
-
-
-
-
 ## 2. Configuration
 
 The preprocessed Drebin and IDS2018 dataset can be found under the `data` folder. If you prefer to modify the preprocessing step, you may download the original dataset here: https://www.sec.cs.tu-bs.de/~danarp/drebin/index.html and https://www.unb.ca/cic/datasets/ids-2018.html and fill out the configuration in `cade/config.py`.
-
-
-
-
 
 ## 3. Usage
 
@@ -77,10 +72,6 @@ usage: main.py [-h] [--data DATA] [-c {mlp,rf}] [--stage {detect,explanation}]
 ```
 
 See `cade/utils.py` or run `python main.py -h` for detailed help. You may also check `run_drebin_cade.sh` for a bunch of examples.
-
-
-
-
 
 ## 4. Examples
 
@@ -123,8 +114,6 @@ See `cade/utils.py` or run `python main.py -h` for detailed help. You may also c
    python -u average_all_detection_results.py IDS 1
    ```
 
-
-
 ### 4.2 Drift explanation
 
 1. CADE explaining drift samples on the Drebin-Fakedoc setting (i.e., drebin_new_7):
@@ -162,7 +151,6 @@ See `cade/utils.py` or run `python main.py -h` for detailed help. You may also c
    ```
 
 5. Compare CADE with boundary-based explanation and random explanation (using distance as the evaluation metric)
-
    1. Drebin-FakeDoc
 
    ```bash
@@ -202,21 +190,12 @@ See `cade/utils.py` or run `python main.py -h` for detailed help. You may also c
    0.001 0 0.1 > logs/nohup-IDS-gradient-exp.log &
    ```
 
-
-
-
-
 ## 5. Contact
 
 If you have any questions, please contact Limin (liminy2@illinois.edu).
-
-
-
-
 
 ## 6. Licensing
 
 For ethical considerations, code and data is covered by a modified BSD 3-Clause License which restricts the use of the code to academic purposes and which specifically prohibits commercial applications.
 
 > Any redistribution or use of this software must be limited to the purposes of non-commercial scientific research or non-commercial education. Any other use, in particular any use for commercial purposes, is prohibited. This includes, without limitation, incorporation in a commercial product, use in a commercial service, or production of other artefacts for commercial purposes.
-
